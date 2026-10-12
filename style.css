@@ -1,0 +1,370 @@
+/* ==========================================================
+   A SEÇÃO RESTRITA — style.css
+   ========================================================== */
+
+/* ---------- Variáveis: identidade visual em um só lugar ---------- */
+:root {
+    --fundo: #130e1d;
+    --painel: #1e1630;
+    --dourado: #d9b45a;
+    --pergaminho: #efe6d2;
+    --vinho: #8f1d33;
+    --vinho-claro: #ff9aa8;
+    --verde: #62d99a;
+
+    --fonte-titulo: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --fonte-texto: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ---------- Reset ---------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--pergaminho);
+    font-family: var(--fonte-texto);
+    line-height: 1.6;
+}
+
+/* Fundo da estante fixo, com camada escura por cima para o texto ficar legível */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(rgba(12, 8, 20, 0.80), rgba(12, 8, 20, 0.92)),
+        url("../img/fundo-estante.jpg") center / cover no-repeat;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+    line-height: 1.2;
+}
+
+/* ---------- Foco visível (teclado) ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--dourado);
+    outline-offset: 3px;
+}
+
+/* ---------- 01 Cabeçalho ---------- */
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 32px;
+    padding: 16px 32px;
+    background-color: rgba(10, 6, 16, 0.92);
+    border-bottom: 2px solid var(--dourado);
+}
+
+.logo {
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    color: var(--dourado);
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+}
+
+.menu a {
+    color: var(--pergaminho);
+    text-decoration: none;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.menu a:hover {
+    color: var(--dourado);
+    border-bottom-color: var(--dourado);
+}
+
+/* ---------- Seções ---------- */
+.secao {
+    width: min(1120px, 100% - 32px);
+    margin-inline: auto;
+    padding-block: 44px 8px;
+}
+
+.secao h2,
+.rodape h2 {
+    font-size: 1.8rem;
+    color: var(--dourado);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(217, 180, 90, 0.4);
+}
+
+/* ---------- 02 Destaque ---------- */
+.boas-vindas {
+    max-width: 60ch;
+    margin-bottom: 28px;
+    font-size: 1.1rem;
+}
+
+.livro-destaque {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    padding: 24px;
+    background-color: rgba(30, 22, 48, 0.92);
+    border: 1px solid rgba(217, 180, 90, 0.5);
+    border-radius: 6px;
+}
+
+.livro-destaque img {
+    width: min(240px, 100%);
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border: 2px solid var(--dourado);
+}
+
+.info-destaque {
+    flex: 1 1 280px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-destaque h3 {
+    font-size: 2rem;
+    color: var(--pergaminho);
+}
+
+.sinopse {
+    max-width: 62ch;
+    font-family: var(--fonte-titulo);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* ---------- 03 Busca e categorias ---------- */
+.form-busca {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.form-busca label {
+    flex: 1 1 100%;
+    font-weight: 600;
+}
+
+.form-busca input {
+    flex: 1 1 240px;
+    min-width: 0;
+    padding: 12px 14px;
+    font-size: 1rem;
+    color: var(--pergaminho);
+    background-color: var(--painel);
+    border: 1px solid rgba(217, 180, 90, 0.6);
+    border-radius: 4px;
+}
+
+.form-busca input::placeholder {
+    color: #a99fbd;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filtro {
+    padding: 8px 18px;
+    font-size: 0.95rem;
+    color: var(--pergaminho);
+    background-color: transparent;
+    border: 1px solid var(--dourado);
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.filtro:hover,
+.filtro.ativo {
+    color: #1a1208;
+    background-color: var(--dourado);
+}
+
+/* ---------- Botões (mesma aparência em todo o site) ---------- */
+.botao {
+    padding: 11px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--pergaminho);
+    background-color: var(--vinho);
+    border: 1px solid var(--vinho-claro);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background-color: #a8243d;
+}
+
+/* ---------- 04 Catálogo (Flexbox + flex-wrap) ---------- */
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.card {
+    flex: 1 1 220px;
+    max-width: 100%;
+    min-width: 0;
+    display: flex;                 /* flex dentro de flex: o card organiza o que tem dentro */
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 12px 16px;
+    background-color: rgba(30, 22, 48, 0.94);
+    border: 1px solid rgba(217, 180, 90, 0.35);
+    border-radius: 6px;
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    overflow-wrap: anywhere;
+}
+
+.meta {
+    font-size: 0.9rem;
+    color: #c9bfdc;
+}
+
+.card .botao {
+    margin-top: auto;              /* empurra o botão para o fim do card */
+}
+
+/* Status em texto (e cor), nunca só a cor */
+.status {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.status::before {
+    content: "● ";
+}
+
+.disponivel {
+    color: var(--verde);
+}
+
+.emprestado {
+    color: var(--vinho-claro);
+}
+
+/* ---------- 05 Rodapé ---------- */
+.rodape {
+    margin-top: 56px;
+    padding: 32px max(16px, calc((100% - 1120px) / 2));
+    background-color: rgba(10, 6, 16, 0.94);
+    border-top: 2px solid var(--dourado);
+}
+
+.rodape h2 {
+    font-size: 1.4rem;
+}
+
+.rodape p {
+    max-width: 70ch;
+    margin-bottom: 8px;
+}
+
+.creditos {
+    font-size: 0.85rem;
+    color: #a99fbd;
+}
+
+/* ---------- Celular (até 600px) ---------- */
+@media (max-width: 600px) {
+    .topo {
+        padding: 14px 16px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 1.45rem;
+    }
+
+    .menu {
+        justify-content: center;
+        gap: 6px 20px;
+    }
+
+    .secao h2 {
+        font-size: 1.5rem;
+    }
+
+    .livro-destaque {
+        padding: 16px;
+        justify-content: center;
+    }
+
+    .info-destaque h3 {
+        font-size: 1.5rem;
+    }
+
+    .catalogo {
+        gap: 14px;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 7px);  /* dois cards por linha no celular */
+        padding: 8px 8px 12px;
+    }
+
+    .card h3 {
+        font-size: 0.95rem;
+    }
+
+    .meta {
+        font-size: 0.8rem;
+    }
+
+    .card .botao {
+        padding: 9px 10px;
+        font-size: 0.85rem;
+    }
+}
