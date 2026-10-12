@@ -1,8 +1,3 @@
-/* ==========================================================
-   A SEÇÃO RESTRITA — style.css
-   ========================================================== */
-
-/* ---------- Variáveis: identidade visual em um só lugar ---------- */
 :root {
     --fundo: #130e1d;
     --painel: #1e1630;
@@ -16,7 +11,6 @@
     --fonte-texto: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* ---------- Reset ---------- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -38,7 +32,6 @@ body {
     line-height: 1.6;
 }
 
-/* Fundo da estante fixo, com camada escura por cima para o texto ficar legível */
 body::before {
     content: "";
     position: fixed;
@@ -64,7 +57,6 @@ h1, h2, h3 {
     line-height: 1.2;
 }
 
-/* ---------- Foco visível (teclado) ---------- */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
@@ -72,7 +64,6 @@ input:focus-visible {
     outline-offset: 3px;
 }
 
-/* ---------- 01 Cabeçalho ---------- */
 .topo {
     display: flex;
     justify-content: space-between;
@@ -108,7 +99,6 @@ input:focus-visible {
     border-bottom-color: var(--dourado);
 }
 
-/* ---------- Seções ---------- */
 .secao {
     width: min(1120px, 100% - 32px);
     margin-inline: auto;
@@ -124,7 +114,6 @@ input:focus-visible {
     border-bottom: 1px solid rgba(217, 180, 90, 0.4);
 }
 
-/* ---------- 02 Destaque ---------- */
 .boas-vindas {
     max-width: 60ch;
     margin-bottom: 28px;
@@ -168,7 +157,6 @@ input:focus-visible {
     line-height: 1.7;
 }
 
-/* ---------- 03 Busca e categorias ---------- */
 .form-busca {
     display: flex;
     flex-wrap: wrap;
@@ -219,7 +207,6 @@ input:focus-visible {
     background-color: var(--dourado);
 }
 
-/* ---------- Botões (mesma aparência em todo o site) ---------- */
 .botao {
     padding: 11px 20px;
     font-size: 0.95rem;
@@ -235,7 +222,6 @@ input:focus-visible {
     background-color: #a8243d;
 }
 
-/* ---------- 04 Catálogo (Flexbox + flex-wrap) ---------- */
 .catalogo {
     display: flex;
     flex-wrap: wrap;
@@ -246,7 +232,7 @@ input:focus-visible {
     flex: 1 1 220px;
     max-width: 100%;
     min-width: 0;
-    display: flex;                 /* flex dentro de flex: o card organiza o que tem dentro */
+    display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 12px 12px 16px;
@@ -273,10 +259,9 @@ input:focus-visible {
 }
 
 .card .botao {
-    margin-top: auto;              /* empurra o botão para o fim do card */
+    margin-top: auto;
 }
 
-/* Status em texto (e cor), nunca só a cor */
 .status {
     font-weight: 700;
     font-size: 0.95rem;
@@ -294,7 +279,6 @@ input:focus-visible {
     color: var(--vinho-claro);
 }
 
-/* ---------- 05 Rodapé ---------- */
 .rodape {
     margin-top: 56px;
     padding: 32px max(16px, calc((100% - 1120px) / 2));
@@ -316,7 +300,6 @@ input:focus-visible {
     color: #a99fbd;
 }
 
-/* ---------- Celular (até 600px) ---------- */
 @media (max-width: 600px) {
     .topo {
         padding: 14px 16px;
@@ -351,7 +334,7 @@ input:focus-visible {
     }
 
     .card {
-        flex: 1 1 calc(50% - 7px);  /* dois cards por linha no celular */
+        flex: 1 1 calc(50% - 7px);
         padding: 8px 8px 12px;
     }
 

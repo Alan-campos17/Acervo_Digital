@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A Seção Restrita: acervo de livros e jogos de magia, ação e terror.">
     <link rel="stylesheet" href="css/style.css">
     <title>A Seção Restrita</title>
 </head>
 <body>
 
-    <!-- 01 Cabeçalho: nome + menu com links internos -->
     <header class="topo">
         <h1 class="logo">A Seção Restrita</h1>
         <nav aria-label="Menu principal">
@@ -24,30 +22,28 @@
 
     <main>
 
-        <!-- 02 Apresentação e destaque -->
         <section id="destaque" class="secao">
-            <h2>Bem-vindo à área proibida</h2>
-            <p class="boas-vindas">Aqui, livros de magia e jogos de aventura e terror dividem as mesmas prateleiras. Entre, mas não acenda a luz.</p>
+            <h2>Bem-vindo à Seção Restrita</h2>
+            <p class="boas-vindas">Venha conhecer nossos livros e jogos de magia, aventura e terror.</p>
 
             <article class="livro-destaque">
-                <img src="img/capa-pedra-filosofal.png" alt="Capa autoral de Harry Potter e a Pedra Filosofal: uma gema vermelha brilhando sobre um castelo">
+                <img src="img/capa-pedra-filosofal.png" alt="Capa de Harry Potter e a Pedra Filosofal">
                 <div class="info-destaque">
                     <h3>Harry Potter e a Pedra Filosofal</h3>
                     <p class="meta">J.K. Rowling / Magia</p>
-                    <p class="sinopse">Um garoto que cresceu dormindo debaixo da escada descobre, aos onze anos, que é um bruxo famoso. Em Hogwarts, ele faz os primeiros amigos e percebe que algo guardado no castelo está sendo cobiçado por alguém muito perigoso.</p>
+                    <p class="sinopse">Harry Potter descobre aos onze anos que é um bruxo e vai estudar em Hogwarts. Lá ele faz amigos e descobre que a Pedra Filosofal está escondida no castelo e que alguém quer roubá-la.</p>
                     <p class="status disponivel">Disponível</p>
                 </div>
             </article>
         </section>
 
-        <!-- 03 Busca e categorias -->
         <section id="busca" class="secao">
             <h2>Buscar no acervo</h2>
-            <form class="form-busca" action="#catalogo">
+            <div class="form-busca" role="search">
                 <label for="campo-busca">Título da obra</label>
                 <input type="search" id="campo-busca" name="busca" placeholder="Digite o título...">
                 <button type="button" class="botao">Buscar</button>
-            </form>
+            </div>
 
             <ul class="filtros" aria-label="Categorias">
                 <li><button type="button" class="filtro ativo">Todas</button></li>
@@ -57,14 +53,13 @@
             </ul>
         </section>
 
-        <!-- 04 Catálogo: 8 obras, cards organizados com Flexbox -->
         <section id="catalogo" class="secao">
             <h2>Catálogo</h2>
 
             <div class="catalogo">
 
                 <article class="card">
-                    <img src="img/capa-pedra-filosofal.png" alt="Capa autoral de Harry Potter e a Pedra Filosofal">
+                    <img src="img/capa-pedra-filosofal.png" alt="Capa de Harry Potter e a Pedra Filosofal">
                     <h3>Harry Potter e a Pedra Filosofal</h3>
                     <p class="meta">J.K. Rowling / Magia</p>
                     <p class="status disponivel">Disponível</p>
@@ -72,7 +67,7 @@
                 </article>
 
                 <article class="card">
-                    <img src="img/capa-camara-secreta.png" alt="Capa autoral de Harry Potter e a Câmara Secreta: uma serpente verde diante de uma porta de pedra">
+                    <img src="img/capa-camara-secreta.png" alt="Capa de Harry Potter e a Câmara Secreta">
                     <h3>Harry Potter e a Câmara Secreta</h3>
                     <p class="meta">J.K. Rowling / Magia</p>
                     <p class="status emprestado">Emprestado</p>
@@ -80,7 +75,7 @@
                 </article>
 
                 <article class="card">
-                    <img src="img/capa-azkaban.png" alt="Capa autoral de Harry Potter e o Prisioneiro de Azkaban: uma torre escura cercada por névoa e mar">
+                    <img src="img/capa-azkaban.png" alt="Capa de Harry Potter e o Prisioneiro de Azkaban">
                     <h3>Harry Potter e o Prisioneiro de Azkaban</h3>
                     <p class="meta">J.K. Rowling / Magia</p>
                     <p class="status disponivel">Disponível</p>
@@ -88,7 +83,7 @@
                 </article>
 
                 <article class="card">
-                    <img src="img/capa-god-of-war.png" alt="Capa autoral de God of War: um machado de gelo diante de montanhas">
+                    <img src="img/capa-god-of-war.png" alt="Capa de God of War">
                     <h3>God of War</h3>
                     <p class="meta">Santa Monica Studio / Ação e Aventura</p>
                     <p class="status disponivel">Disponível</p>
@@ -96,7 +91,7 @@
                 </article>
 
                 <article class="card">
-                    <img src="img/capa-ragnarok.png" alt="Capa autoral de God of War Ragnarök: uma árvore sem folhas diante de um sol escuro e rachado">
+                    <img src="img/capa-ragnarok.png" alt="Capa de God of War Ragnarök">
                     <h3>God of War Ragnarök</h3>
                     <p class="meta">Santa Monica Studio / Ação e Aventura</p>
                     <p class="status emprestado">Emprestado</p>
@@ -104,7 +99,7 @@
                 </article>
 
                 <article class="card">
-                    <img src="img/capa-re2.png" alt="Capa autoral de Resident Evil 2: cidade escura sob lua vermelha e chuva">
+                    <img src="img/capa-re2.png" alt="Capa de Resident Evil 2">
                     <h3>Resident Evil 2</h3>
                     <p class="meta">Capcom / Terror</p>
                     <p class="status disponivel">Disponível</p>
@@ -112,7 +107,7 @@
                 </article>
 
                 <article class="card">
-                    <img src="img/capa-re4.png" alt="Capa autoral de Resident Evil 4: floresta sob lua cheia, com um corvo e uma cabana">
+                    <img src="img/capa-re4.png" alt="Capa de Resident Evil 4">
                     <h3>Resident Evil 4</h3>
                     <p class="meta">Capcom / Terror</p>
                     <p class="status emprestado">Emprestado</p>
@@ -120,7 +115,7 @@
                 </article>
 
                 <article class="card">
-                    <img src="img/capa-village.png" alt="Capa autoral de Resident Evil Village: castelo gótico nevado sob lua vermelha">
+                    <img src="img/capa-village.png" alt="Capa de Resident Evil Village">
                     <h3>Resident Evil Village</h3>
                     <p class="meta">Capcom / Terror</p>
                     <p class="status disponivel">Disponível</p>
@@ -132,12 +127,11 @@
 
     </main>
 
-    <!-- 05 Rodapé: descrição curta, autores e créditos -->
     <footer id="sobre" class="rodape">
         <h2>Sobre a biblioteca</h2>
-        <p>A Seção Restrita é um acervo fictício de livros e jogos de magia, ação e terror, criado como atividade da disciplina Modelagem de Sites Básicos.</p>
+        <p>A Seção Restrita é um acervo de livros e jogos de magia, ação e terror.</p>
         <p>Autor do projeto: Alan Campos Macena.</p>
-        <p class="creditos">Capas e imagem de fundo: arte original, sem uso de imagens oficiais. Os títulos pertencem aos seus respectivos titulares e aparecem apenas de forma ilustrativa.</p>
+        <p class="creditos">Créditos: capas e imagem de fundo geradas com IA (Claude), sem imagens oficiais.</p>
     </footer>
 
 </body>
